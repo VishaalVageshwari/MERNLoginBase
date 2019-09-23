@@ -1,0 +1,15 @@
+.arial-header {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 28px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 23px;
+}
+
+.vertical-center {
+  min-height: 100%;
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+}

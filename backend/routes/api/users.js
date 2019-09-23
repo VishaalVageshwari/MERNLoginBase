@@ -16,6 +16,9 @@ const User = require('../../models/user.model');
 // Number of salt rounds for bcrypt password hashing
 const SALT_ROUNDS = 10;
 
+// One year in seconds
+const ONE_YEAR = 31556926;
+
 /* @route POST api/users/register
  * @desc Register user
  * @access Public
@@ -31,6 +34,7 @@ router.post('/register', (req, res, next) => {
 
   User.findOne({ email: req.body.email })
     .then(user => {
+      // Check if email is already in user otherwise create new user
       if (user) {
         return res.status(400).json( { email: 'Email is already in use. Please enter a differnet email.' });
       } else {
@@ -49,7 +53,7 @@ router.post('/register', (req, res, next) => {
             newUser
               .save()
               .then(user => res.json(user))
-              .catch(error => console.log(error));
+              .catch(error => console.log('Error sending json user response:', error));
           });
         });
       }
@@ -95,7 +99,7 @@ router.post("/login", (req, res, next) => {
               payload,
               keys.secretOrKey,
               {
-                expiresIn: 31556926 // One year in seconds
+                expiresIn: ONE_YEAR
               },
               (error, token) => {
                 if (error) return next(error); 
