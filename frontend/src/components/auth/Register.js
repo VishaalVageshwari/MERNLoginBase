@@ -60,83 +60,81 @@ class Register extends Component {
               <i className="material-icons">keyboard_backspace</i>
               Back to home
             </Link>
-            <div className="col-12" style={{ paddingLeft: "11.250px" }}>
-              <h4>
-                <b>Register</b> below
-              </h4>
+            <div className="col-8" 
+              style={{ 
+                paddingLeft: "30px",
+                paddingTop: "5px",
+                paddingBottom: "5px"
+              }}>
+              <h1 className="arial-header1">Register</h1>
               <p className="text-secondary">
                 Already have an account? <Link to="/login">Log in</Link>
               </p>
             </div>
-            <form noValidate onSubmit={this.onSubmit}>
-              <div className="form-group col-12">
+            <form className="col-8">
+              <div className="form-group" style={{ paddingLeft: "15px" }}>
+                <label htmlFor="name">Full Name</label>
                 <input
                   onChange={this.onChange}
                   value={this.state.name}
                   error={errors.name}
                   id="name"
                   type="text"
-                  className={classnames("", {
+                  placeholder="Enter name"
+                  className={classnames("form-control", {
                     invalid: errors.name
                   })}
                 />
-                <label htmlFor="name">Name</label>
                 <span className="text-danger">{errors.name}</span>
               </div>
-              <div className="form-group col-12">
+              <div className="form-group" style={{ paddingLeft: "15px" }}>
+                <label htmlFor="email">Email</label>
                 <input
                   onChange={this.onChange}
-                  value={this.state.email}
-                  error={errors.email}
+                  value={this.state.name}
+                  error={errors.name}
                   id="email"
                   type="email"
-                  className={classnames("", {
+                  placeholder="Enter email"
+                  className={classnames("form-control", {
                     invalid: errors.email
                   })}
                 />
-                <label htmlFor="email">Email</label>
-                <span className="text-danger">{errors.email}</span>
+                <span className="text-danger">{errors.name}</span>
               </div>
-              <div className="form-group col-12">
+              <div className="form-group" style={{ paddingLeft: "15px" }}>
+                <label htmlFor="password">Password</label>
                 <input
                   onChange={this.onChange}
-                  value={this.state.password}
-                  error={errors.password}
+                  value={this.state.name}
+                  error={errors.name}
                   id="password"
                   type="password"
-                  className={classnames("", {
+                  placeholder="Enter password"
+                  className={classnames("form-control", {
                     invalid: errors.password
                   })}
                 />
-                <label htmlFor="password">Password</label>
                 <span className="text-danger">{errors.password}</span>
               </div>
-              <div className="form-group col-12">
+              <div className="form-group" style={{ paddingLeft: "15px" }}>
+                <label htmlFor="password2">Confirm Password</label>
                 <input
                   onChange={this.onChange}
-                  value={this.state.password2}
-                  error={errors.password2}
+                  value={this.state.name}
+                  error={errors.name}
                   id="password2"
                   type="password"
-                  className={classnames("", {
-                    invalid: errors.password2
+                  placeholder="Confirm password"
+                  className={classnames("form-control", {
+                    invalid: errors.password
                   })}
                 />
-                <label htmlFor="password2">Confirm Password</label>
                 <span className="text-danger">{errors.password2}</span>
               </div>
-              <div className="col-12" style={{ paddingLeft: "11.250px" }}>
-                <button
-                  style={{
-                    width: "150px",
-                    borderRadius: "3px",
-                    letterSpacing: "1.5px",
-                    marginTop: "1rem"
-                  }}
-                  type="submit"
-                  className="btn btn-success"
-                >
-                  Register
+              <div className="col-12" style={{ paddingLeft: "12.5px" }}>
+                <button type="submit" className="btn btn-outline-dark">
+                  Sign-Up
                 </button>
               </div>
             </form>

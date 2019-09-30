@@ -6,6 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import $ from 'jquery';
 import Popper from 'popper.js';
 import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-material-design/dist/css/bootstrap-material-design.css';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
